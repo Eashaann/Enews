@@ -1,0 +1,10 @@
+<div class=" row main_area">
+  <%@sports.each do|sports|%> 
+  	<h1><%=sports.name%></h1> <br>
+    <%=image_tag(sports.image_url,class:"img-responsive")%>
+    <p class="description_detail"><%=sports.description%></p> <br>
+    <%= "#{time_ago_in_words(sports.created_at)} ago" %><hr>
+  <%end%>
+</div>
+  
+<%= render 'articles/featured', featured: @featured %>

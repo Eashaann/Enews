@@ -1,0 +1,10 @@
+<div class=" row main_area">
+  <%@business.each do|business|%> 
+  	<h1><%=business.name%></h1> <br>
+    <%=image_tag(business.image_url,class:"img-responsive")%>
+    <p class="description_detail"><%=business.description%></p> <br>
+    <%= "#{time_ago_in_words(business.created_at)} ago" %><hr>
+  <%end%>
+</div>
+  
+<%= render 'articles/featured', featured: @featured %>

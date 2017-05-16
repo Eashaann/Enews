@@ -1,0 +1,11 @@
+<div class=" row main_area">
+  <%@world.each do|world|%> 
+  	<h1><%=world.name%></h1> <br>
+    <%=image_tag(world.image_url,class:"img-responsive")%>
+    <p class="description_detail"><%=world.description%></p> <br>
+    <%= "#{time_ago_in_words(world.created_at)} ago" %><hr>
+  <%end%>
+</div>
+  
+<%= render 'articles/featured', featured: @featured %>
+

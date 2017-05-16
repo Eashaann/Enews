@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
 <div class="row index-articles">
   <% @articles.each do |article| %>
-    <div class="col-md-6 row1">
-      <h2 id="heading"><%= link_to article.name, article %></h2>
-      <%=image_tag(article.image_url,class:"img responsive")%>
-      <p><%=article.description%></p> <br>
-      <%=article.featured_articles%>
-      <%= article.created_at.localtime%> 
-      <%= "#{time_ago_in_words(article.created_at)} ago" %><hr>
-
-      <%= article.created_at.to_formatted_s(:long) %>
+    <div class="col-md-6 box">
+      <h3 id="heading"><%= link_to article.name, article %></h3>
+      <%=image_tag(article.image_url,class:"img-responsive")%>
+      <p class="description"><%=article.description%></p> <br>
+      <%article.featured_articles%>
+      <p class="time"><%= article.created_at.to_formatted_s(:long) %>
+      <%= "#{time_ago_in_words(article.created_at)} ago" %></p><hr>
       <p><%= link_to 'Show |', article %>
       <%= link_to 'Edit |', edit_article_path(article) %>
       <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
