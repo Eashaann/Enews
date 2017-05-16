@@ -1,4 +1,12 @@
 <div class=" row featured_area">
+  <div class="article_panel">
+    <%@featured.each do|featured|%>
+      <h4 id="top_stories"><strong><%= link_to featured.name, featured %></strong></h4>
+  <%end%>
+  </div>
+  <p class="slide"><div id="pull-me">Top Stories >></div></p>
+  <br />
+  <br />
   <%@featured.each do|featured|%>
   	<h4><%=featured.name%></h4>
     <%=image_tag(featured.image_url,class:"img-responsive")%>
