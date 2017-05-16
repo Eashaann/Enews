@@ -81,6 +81,11 @@ li{
 }
 #top_stories a{
 	color: #000;
+	text-decoration: none;
+}
+#top_stories a:hover{
+	color: #cc0000;
+	text-decoration: none;
 }
 //panel styles
 #pull-me{

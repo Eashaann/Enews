@@ -5,13 +5,13 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
-    @featured = Article.where(featured_articles: true)
+    @featured = Article.get_featured_article
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @featured = Article.where(featured_articles: true)
+    @featured = Article.get_featured_article
   end
 
   # GET /articles/new
@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @featured = Article.where(featured_articles: true)
+    @featured = Article.get_featured_article
   end
 
   # POST /articles
