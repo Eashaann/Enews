@@ -12,7 +12,6 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @featured = Article.where(featured_articles: true)
-    @featured = Article.limit(3)
   end
 
   # GET /articles/new
