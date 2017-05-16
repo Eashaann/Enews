@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ENews</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+  	<div class="container"><!-- container starts here -->
+  		<div id="logo"><!-- logo area -->
+  			<div class="row">
+				  <div class="col-md-4"><%=image_tag("news.png", class: "img-responsive ")%></div>
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4">icons</div>
+				</div>
+			</div> <!-- logo area end here-->
+  		<div><!-- headline area -->
+  			<nav class="navbar navbar-default">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <li class="navbar-brand active"><%= link_to 'HOME',root_path%></li>
+				     
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+				        <li></li>
+
+				        	<li><%= link_to 'Top News',root_path%></li>
+				        	<li><%= link_to 'Featuted News',root_path%></li>
+				        	<li><%= link_to 'Analysis',root_path%></li>
+				        	<li><%= link_to 'World',root_path%></li>
+				        	<li><%= link_to 'Health',root_path%></li>
+				        	<li><%= link_to 'Analysis',root_path%></li>
+				        	<li><%= link_to 'Sports',root_path%></li>
+				        	<li><%= link_to 'Contact us',root_path%></li>
+
+				     	</div><!-- /.navbar-collapse -->
+				  	</div><!-- /.container-fluid -->
+				</nav>
+  		</div><!-- headlines end here-->
+  		
+  		<div class="articles-area">
+  			<%= yield %>
+  		</div>
+  	</div><!-- container ends here -->
+   
+			<div class="footer">
+			fdgdgfgf
+			</div>
+
+	
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<div class=" row featured_area">
+  <%@featured.each do|featured|%>
+    <%=image_tag(featured.image_url,class:"img responsive")%>
+    <p><%=featured.name%></p> <br>
+    <%= featured.created_at.localtime%> <hr>
+  <%end%>
+</div>
+   

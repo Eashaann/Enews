@@ -1,0 +1,62 @@
+//layout page styling
+* { box-sizing: border-box; 
+	margin: 0;
+	padding :0;
+
+}
+.navbar-brand a{
+	color: #777;
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+.navbar-brand a:hover{
+	color: #000;
+	text-decoration: none;
+}
+.container{
+	min-height: 800px;
+	width: 75%;
+}
+.footer{
+	height: 50px;
+	background-color: #F5F5F5;
+
+	width: 100%;
+	padding: 15px;
+}
+
+
+//static page styling
+.index-articles, .edit_page, .show_page{
+	width: 60%; 
+	float: left; 
+	margin: 0.5px;
+	padding: 15px;
+}
+.new-art-btn{
+	margin: 13px;
+}
+.featured_area{
+	width: 33%;
+	float: right; 
+	margin: 0.5px;
+	padding: 10px;background-color:blue;
+}
+
+//show page styling
+.show_page{
+	width: 60%;
+}
+//new page styling
+.new_page{
+	width: 80%;
+	margin: 0 auto;
+	
+}
+
+
+.articles-area{
+	backgroud-color:red;
+}
