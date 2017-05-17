@@ -7,9 +7,12 @@ Rails.application.routes.draw do
 
   get '/business', to:'sections#business'
 
-   get '/contact_us', to:'sections#contact_us'
+  get 'sections/contact'
+
+  post 'sections/thank_you'
 
   get '/tech', to:'sections#tech'
+
 
   resources :articles
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

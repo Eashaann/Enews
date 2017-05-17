@@ -19,13 +19,17 @@ class SectionsController < ApplicationController
     @featured = Article.where(featured_articles: true)
   end
 
-   def tech
+  def tech
     @tech = Article.where("category =?", "tech")
     @featured = Article.where(featured_articles: true)
   end
 
-   def contact_us
-    
+  def contact
     @featured = Article.where(featured_articles: true)
   end
+
+  def thank_you
+
+  end
+
 end
