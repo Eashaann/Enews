@@ -27,6 +27,9 @@ li{
 .form-control{
 	display: inline-block;
 }
+#sign_in a{
+	padding-left: 40em;
+}
 .container{
 	min-height: 800px;
 	width: 75%;
@@ -106,6 +109,14 @@ li{
 }
 
 
+//log in page styling
+#user_email{
+	margin-bottom: 15px;
+}
+.check-box{
+	margin-left: 5px;
+	margin-top: 15px;
+}
 
 //panel styles
 #pull-me{

@@ -61,12 +61,34 @@
 				        	<li><%= link_to 'Business',business_path%></li>
 				       		<li><%= link_to 'Contact us',sections_contact_path%></li>
 
+									<ul class="nav navbar-nav navbar-right" id="sign_in"><!-- sign in button -->
+									  <li>
+									  <% if user_signed_in? %>
+									    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+									  <% else %>
+									    <%= link_to('Login', new_user_session_path) %>
+									  <% end %>
+									  </li>
+									</ul>
+
 				     	</div><!-- /.navbar-collapse -->
 				  	</div><!-- /.container-fluid -->
 				</nav>
   		</div><!-- headlines end here-->
   		
   		<div class="articles-area">
+  			<% if notice %> 
+	  			<div class="alert alert-success glyphicon glyphicon-exclamation-sign fadeout" role="alert">
+	  				<%= notice %>
+	  			</div>
+				<% end %>
+
+				<% if alert %>
+	  			<div class="alert alert-danger glyphicon glyphicon-exclamation-sign fadeout" role="alert">
+	  				<%= alert %>
+					</div>
+				<% end %>
+
   			<%= yield %>
   		</div>
   	</div><!-- container ends here -->
