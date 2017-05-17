@@ -4,7 +4,11 @@ class Article < ApplicationRecord
 	end
 
 	def self.search(search_term)
-	  Article.where("name LIKE ?", "%#{search_term}%")
+	  if Rails.env.production?
+  		Article.where("name ilike ?", "%#{search_term}%")
+  	else
+  		Article.where("name LIKE ?", "%#{search_term}%")
+  	end 
 	end
-		
+
 end
