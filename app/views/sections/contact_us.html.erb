@@ -1,0 +1,33 @@
+<div class="contact-content">
+  <h3 class="heading">Contact Us >> </h3><hr>
+  <p>Dubai</p>
+  <p>Al Ameri Tower - Al Barsha Heights(Tecom)</p>
+  <p>*th Floor, Unit: 2006</p>
+  <p>Contact Us </p>
+  <p>00971 55 287 ****</p>
+  <p>00971 55 97***</p> </br></br>
+
+  <%= flash[:notice] %>
+  <%= form_tag("/sections/contact_us") do %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <%= label_tag :name , nil, class:"sr-only" %>
+          <%= text_field_tag :name, nil , class: "form-control", placeholder: "Enter Name", required:"required" %>
+        </div>      
+        <div class="form-group">
+          <%= label_tag :email, "Email Address" , class:"sr-only" %>
+          <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" , required:"required"%>
+        </div>
+        <div class="form-group">
+          <%= label_tag :message , nil, class:"sr-only" %>
+          <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message", required:"required" %>
+        </div>      
+      </div>
+    </div>
+  <%= submit_tag "Send" ,class: "btn btn-primary btn-special"%>
+  <% end %>
+</div>
+
+
+<%= render 'articles/featured', featured: @featured %>

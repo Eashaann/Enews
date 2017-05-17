@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/business', to:'sections#business'
 
+   get '/contact_us', to:'sections#contact_us'
+
   get '/tech', to:'sections#tech'
 
   resources :articles

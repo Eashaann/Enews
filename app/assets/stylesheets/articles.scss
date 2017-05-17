@@ -40,7 +40,7 @@ li{
 
 
 //static page styling
-.index-articles, .edit_page, .show_page,.main_area{
+.index-articles, .edit_page, .show_page,.main_area,.contact-content{
 	width: 60%; 
 	float: left; 
 	margin: 0.5px;
@@ -100,6 +100,13 @@ li{
 	color: #cc0000;
 	text-decoration: none;
 }
+// contact us page styles
+.contact-content{
+	width: 55%;
+}
+
+
+
 //panel styles
 #pull-me{
   -webkit-box-shadow: 0 0 8px #FFD700;
