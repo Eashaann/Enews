@@ -4,8 +4,14 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
-    @featured = Article.get_featured_article
+    if params[:q]
+      search_term = params[:q]
+      @articles = Article.search(search_term)
+      @featured = Article.get_featured_article
+    else
+      @articles = Article.all
+      @featured = Article.get_featured_article
+    end
   end
 
   # GET /articles/1

@@ -15,7 +15,23 @@
   			<div class="row">
 				  <div class="col-md-4"><%=image_tag("news.png", class: "img-responsive ")%></div>
 				  <div class="col-md-4"></div>
-				  <div class="col-md-4"></div>
+				  <div class="col-md-4" id="logo_right"><!-- search area starts here -->
+				  	
+				  	</br></br></br></br>
+
+
+				  	<div class="search_block">
+					  	<%= form_tag("/articles", method: "get") do %>
+							 	<%= text_field_tag(:q, nil, class: "form-control search_area",placeholder: "Search") %>
+							  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+  							  <span class="glyphicon glyphicon-search"></span> 
+  							<% end %>
+							<% end %>
+						</div>
+				  	
+
+
+				  </div>
 				</div>
 			</div> <!-- logo area end here-->
   		<div><!-- headline area -->
