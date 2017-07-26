@@ -14,9 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-window.setTimeout(function(){
-$(".fadeout").fadeTo(500, 0).slideUp(500, function()
-{
-$(this).remove();
+
+$(document).on('turbolinks:load', function() {
+
+	window.setTimeout(function(){
+		$(".fadeout").fadeTo(500, 0).slideUp(500, function()
+	{
+		$(this).remove();
+	});
+	}, 2000);
+
+
+// navbar fixed
+ $('.navbar').affix({
+  offset: {
+      top: function() { return 200; }
+  }
+  });
+
 });
-}, 2000);

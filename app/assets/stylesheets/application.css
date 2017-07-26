@@ -18,6 +18,9 @@
 	margin: 0;
 	padding :0;
 }
+body {
+  position: relative; 
+}
 
 li{
 	list-style: none;
@@ -47,3 +50,13 @@ li{
 	top: 0;
 	left: 70%;
 }
+
+  .affix {
+    top:0;
+    width: 73%;
+    z-index: 9999 !important;
+  }
+  .affix ~ .container-fluid {
+		position: relative;
+		top: 50px;
+  }
