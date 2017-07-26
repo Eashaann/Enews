@@ -12,73 +12,88 @@
   </head>
 
   <body>
-  	<div class="container"><!-- container starts here -->
+  	<div class="container">
 
   		<!-- ========================
   		logo area
   		===================== -->
-  		<div id="logo">
-  			<div class="row">
-				  <div class="col-md-4"><%=image_tag("news.png", class: "img-responsive ")%></div>
-				  <div class="col-md-4"></div>
-				  <div class="col-md-4" id="logo_right"><!-- search area starts here -->
-				  	
-				  	</br></br></br></br>
 
-				  	<div class="search_block">
+  		  <div id="logo">
+  			<div class="row">
+				  <div class="col-md-4 col-sm-6"><%=image_tag("news.png", class: "img-responsive")%></div>
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4  col-sm-6" id="logo_right"><!-- search area starts here -->
+				  	
+				  	
+				  	<!-- <div class="search_block"> -->
 					  	<%= form_tag("/articles", method: "get") do %>
 							 	<%= text_field_tag(:q, nil, class: "form-control search_area",placeholder: "Search") %>
-							  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+							  <%= button_tag(type: 'submit', class: "btn btn-primary search-btn") do %>
   							  <span class="glyphicon glyphicon-search"></span> 
   							<% end %>
 							<% end %>
-						</div>
+					<!-- 	</div> -->
 				  </div>
 				</div>
 			</div>
 				
+
+
 			<!-- ========================
   		nav bar
   		===================== -->
-  		<nav class="navbar navbar-inverse">
+			<nav class="navbar navbar-inverse">
 			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
 			      <a class="navbar-brand" href="#">Enews</a>
 			    </div>
-			    <ul class="nav navbar-nav">
-			      <li class="active"><%= link_to 'HOME',root_path%></li>
-			      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
-			        <ul class="dropdown-menu">
-			          <li><%= link_to 'Tech',tech_path%></li>
-				        <li><%= link_to 'World',world_path%></li>
-				        <li><%= link_to 'Health',health_path%></li>
-				        <li><%= link_to 'Sports',sports_path%></li>
-				        <li><%= link_to 'Business',business_path%></li>
-			        </ul>
-			      </li>
-			      <li><%= link_to 'Contact us',sections_contact_path%></li>
-			    </ul>
-			    <ul class="nav navbar-nav navbar-right">
-			      <li>
-			      	<%= link_to new_user_registration_path do %>
-							  <i class="glyphicon glyphicon-user"></i> Sign Up
-							<% end %>
-			      </li>
 
-						<li>
-						  <% if user_signed_in? %>
-						   	<%= link_to destroy_user_session_path, method: :delete do %>
-							    <i class="glyphicon glyphicon-log-in"></i> Logout
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><%= link_to 'HOME',root_path%></li>
+			         <li><%= link_to 'CONTACT',sections_contact_path%></li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORY <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><%= link_to 'Tech',tech_path%></li>
+					        <li><%= link_to 'World',world_path%></li>
+					        <li><%= link_to 'Health',health_path%></li>
+					        <li><%= link_to 'Sports',sports_path%></li>
+					        <li><%= link_to 'Business',business_path%></li>
+			          </ul>
+			        </li>
+			      </ul>
+			 
+			      <ul class="nav navbar-nav navbar-right">
+			        <li>
+				      	<%= link_to new_user_registration_path do %>
+								  <i class="glyphicon glyphicon-user"></i> Sign Up
 								<% end %>
-						  <% else %>
-						   
-						    <%= link_to new_user_session_path do %>
-							    <i class="glyphicon glyphicon-log-in"></i> Login
-								<% end %>
-						  <% end %>
-						</li>
-			    </ul>
-			  </div>
+				      </li>
+
+							<li>
+							  <% if user_signed_in? %>
+							   	<%= link_to destroy_user_session_path, method: :delete do %>
+								    <i class="glyphicon glyphicon-log-in"></i> Logout
+									<% end %>
+							  <% else %>
+							   
+							    <%= link_to new_user_session_path do %>
+								    <i class="glyphicon glyphicon-log-in"></i> Login
+									<% end %>
+							  <% end %>
+							</li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
 			</nav>
 
 
@@ -87,8 +102,15 @@
 
 
 
-			
-  		
+
+
+
+
+
+
+			<!-- ========================
+  		alerts
+  		=====================  -->
   		<div class="articles-area">
   			<% if notice %> 
 	  			<div class="alert alert-success glyphicon glyphicon-exclamation-sign fadeout" role="alert">
@@ -101,12 +123,14 @@
 	  				<%= alert %>
 					</div>
 				<% end %>
-
+				<!-- content -->
   			<%= yield %>
   		</div>
-
   	</div><!-- container ends here -->
    
+  	<!-- ========================
+  	footer
+  	=====================  --> 
 		<div class="footer">
 			&#169; 2017 Easha
 		</div>

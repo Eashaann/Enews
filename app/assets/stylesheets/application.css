@@ -23,22 +23,6 @@ li{
 	list-style: none;
 }
 
-#logo_right{
-	padding: 15px 10px 5px 30px;
-}
-.search_block	{
-	position: relative;
-	left: 8.5em;
-}
-.search_area{
-	width: 50%;
-}
-.form-control{
-	display: inline-block;
-}
-#sign_in_section a{
-	padding-left: 35em;
-}
 .container{
 	min-height: 800px;
 	width: 75%;
@@ -48,4 +32,18 @@ li{
 	background-color: #F5F5F5;
 	width: 100%;
 	padding: 15px 0 15px 55px;
+}
+
+
+
+#logo_right{
+	position: relative;
+	margin: 8% 0 2%;
+	padding: 0 10%;
+}
+
+.search-btn{
+	position: absolute;
+	top: 0;
+	left: 70%;
 }
