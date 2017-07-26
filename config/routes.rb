@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users,:path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout',:sign_up => 'register'}
   resources :users
+  resources :articles do
+    resources :comments
+  end
+
   get 'world', to:'sections#world'
 
   get '/health', to:'sections#health'
@@ -15,8 +19,6 @@ Rails.application.routes.draw do
 
   get '/tech', to:'sections#tech'
 
-
-  resources :articles
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root'articles#index'

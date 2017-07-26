@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+	has_many :comments
+
 	def self.get_featured_article
 		Article.where(featured_articles: true)		
 	end

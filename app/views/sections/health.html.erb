@@ -2,7 +2,7 @@
   <%@health.each do|health|%> 
   	<h1><%=health.name%></h1> <br>
     <%=image_tag(health.image_url,class:"img-responsive")%>
-    <p class="description_detail"><%=health.description%></p> <br>
+    <p class="description_detail"><%=health.description.html_safe%></p> <br>
     <%= "#{time_ago_in_words(health.created_at)} ago" %><hr>
   <%end%>
 </div>

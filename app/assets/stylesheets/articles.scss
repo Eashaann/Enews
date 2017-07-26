@@ -143,19 +143,20 @@ li{
 }
 #pull-me {
 	display:block;
-    position:relative;
-    right:-25px;
-    width:150px;
-    height:20px;
+	position:relative;
+	right:-25px;
+	width:150px;
+	height:20px;
 	font-family:arial,sans-serif;
-    font-size:14px;
+	font-size:14px;
 	color:#ffffff;
-    background:#cc0000;
+	background:#cc0000;
 	text-decoration:none;
-    -moz-border-bottom-left-radius:5px;
-    -moz-border-bottom-right-radius:5px;
-    border-bottom-left-radius:5px;
-    border-bottom-right-radius:5px;
+	-moz-border-bottom-left-radius:5px;
+	-moz-border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	cursor: grab;
 }
 #pull-me p {
     text-align:center;
