@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
       @articles = Article.search(search_term)
       @featured = Article.get_featured_article
     else
-      @articles = Article.all
+      @articles = Article.all.order(created_at: :desc)
       @featured = Article.get_featured_article
     end
   end
