@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+
 
 	window.setTimeout(function(){
 		$(".fadeout").fadeTo(500, 0).slideUp(500, function()
@@ -24,7 +24,7 @@ $(document).on('turbolinks:load', function() {
 	});
 	}, 2000);
 
-
+$(document).on('turbolinks:load', function() {
 // navbar fixed
  $('.navbar').affix({
   offset: {

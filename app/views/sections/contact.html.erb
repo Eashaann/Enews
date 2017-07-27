@@ -1,32 +1,32 @@
-<div class="contact-content">
-  <h3 class="heading">Contact Us  <span class="glyphicon glyphicon-phone-alt"></span></h3><hr>
- 
-  <p>Lorem ipsum dolor sit amet</p>
-  <p>Etiam fermentum</p>
-  <p>Dubai</p>
-  <p>00971 56 287 552</p>
-  <p>00971 56 978 256</p> </br></br>
+<div class="contact-content form_area">
+  <div class="text-center">
+    <h3 class="heading">Contact Us <span class="glyphicon glyphicon-phone-alt"></span></h3><hr>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p>Etiam fermentum</p>
+    <p>Dubai</p>
+    <p>00971 56 287 552</p>
+    <p>00971 56 978 256</p> </br></br>
+  </div>
+  
 
   <%= form_tag("/sections/thank_you") do %>
     <div class="row">
       <div class="col-xs-12">
         <div class="form-group">
-          <%= label_tag :name , nil, class:"sr-only" %>
-          <%= text_field_tag :name, nil , class: "form-control", placeholder: "Enter Name", required:"required" %>
+          <%= label_tag :name, nil, class:"sr-only" %>
+          <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name", required:"required" %>
         </div>      
         <div class="form-group">
-          <%= label_tag :email, "Email Address" , class:"sr-only" %>
-          <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" , required:"required"%>
+          <%= label_tag :email, "Email Address", class:"sr-only" %>
+          <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter Email", required:"required"%>
         </div>
         <div class="form-group">
-          <%= label_tag :message , nil, class:"sr-only" %>
+          <%= label_tag :message, nil, class:"sr-only" %>
           <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message", required:"required" %>
         </div>      
       </div>
     </div>
-  <%= submit_tag "Send" ,class: "btn btn-primary btn-special"%>
+    <%= submit_tag "Send", class: "btn"%>
   <% end %>
 </div>
 
-
-<%= render 'articles/featured', featured: @featured %>

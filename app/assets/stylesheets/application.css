@@ -13,50 +13,187 @@
  *= require_tree .
  *= require_self
  */
-//layout page styling
-* { box-sizing: border-box; 
+
+/*=======================
+layout page styling
+=====================*/
+* { 
+	box-sizing: border-box; 
 	margin: 0;
 	padding :0;
 }
 body {
-  position: relative; 
+  font-size: 16px;
+  position: relative;  
+  background-color: #F8F8F8; 
+  font-family: 'Noticia Text', serif;
 }
 
+/*logo area*/
+#logo-area{
+	position: relative;
+}
+.logo-left{
+	width: 30%;
+	margin-bottom: 0; 
+}
+.search-bar{
+	right: 0;
+	top: 50%;
+	width: 30%;
+	position: absolute;
+}
+
+/*navbar styles*/
+.navbar{
+	border-radius: 0;
+	margin-bottom: 0;
+}
+.navbar-nav li:hover{
+	background-color: black;
+}
+.affix {
+  top:0;
+  width: 73%;
+  z-index: 9999 !important;
+}
+.affix ~ .container-fluid {
+	top: 50px;
+	position: relative;
+}
+
+/*btn styles*/
+.btn{
+	color: #999;
+	border-radius: 0;
+	border-color: #101010;
+	background-color: #333;
+}
+.btn:hover{
+	color: #fff;
+	background-color: #000;
+}
 li{
 	list-style: none;
 }
-
-.container{
-	min-height: 800px;
-	width: 75%;
+a:hover{
+	text-decoration: none;
 }
+.container{
+	width: 75%;
+	min-height: 800px;
+}
+
+/*footer styles*/
 .footer{
-	height: 50px;
-	background-color: #F5F5F5;
 	width: 100%;
+	height: 50px;
+	color: #9d9d9d;
+	background-color: #000;
 	padding: 15px 0 15px 55px;
 }
 
 
+/*=======================
+Media queries
+=====================*/
 
-#logo_right{
-	position: relative;
-	margin: 8% 0 2%;
-	padding: 0 10%;
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+
+/*logo area*/
+	#logo-area{
+		margin-bottom: 20px;
+	}
+	.logo-left {
+		margin-top: 10px;
+    width: 40%;
+  }
+	.search-bar {
+    top: 30%;
+  }
+  .main_area h2{
+  	font-size: 140%;
+  }
 }
 
-.search-btn{
-	position: absolute;
-	top: 0;
-	left: 70%;
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) and (min-width: 481px) {
+
+/*logo area*/
+	#logo-area{
+		margin-bottom: 20px;
+	}
+	.logo-left {
+		margin-top: 10px;
+    width: 50%;
+  }
+	.search-bar {
+    top: 30%;
+    width: 45%;
+  }
+  .main_area h2{
+  	font-size: 140%;
+  }
+
+/*panelstyles*/
+	#pull-me{
+		width: 90%;
+		right: 0;
+	}
+	.featured_area h4, 
+	.main_area{
+		font-size: 85%;
+	}
+
+	/*forms & contact page styles*/
+  .form_area{
+		width: 100%;
+		left: 0;
+	}
 }
 
-  .affix {
-    top:0;
-    width: 73%;
-    z-index: 9999 !important;
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+	
+/*logo area*/
+	.logo-left {
+		margin-top: 10px;
+    width: 50%;
   }
-  .affix ~ .container-fluid {
-		position: relative;
-		top: 50px;
+  .search-bar{
+  	position: relative;
+  	width: 100%;
+  	margin: 10px 0; 
   }
+  /*common styles*/
+  .index-articles, 
+  .edit_page, 
+  .show_page,
+  .main_area,
+  .contact-content{
+		width: 100%; 
+	}
+	.row{
+		margin: 0;
+	}
+	.main_area h2, 
+	.index_box h3, 
+	.show_page h2{
+  	font-size: 130%;
+  }
+
+  /*right featured area*/
+  .featured_area{
+		display: none;
+	}
+
+/*forms & contact page styles*/
+  .form_area{
+		width: 100%;
+		left: 0;
+	}
+	.forgrt-passwrd-btn{
+		font-size: 60%;
+	}
+}

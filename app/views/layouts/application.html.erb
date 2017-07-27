@@ -4,6 +4,8 @@
     <title>ENews</title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet"> 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,26 +19,18 @@
   		<!-- ========================
   		logo area
   		===================== -->
-
-  		  <div id="logo">
-  			<div class="row">
-				  <div class="col-md-4 col-sm-6"><%=image_tag("news.png", class: "img-responsive")%></div>
-				  <div class="col-md-4"></div>
-				  <div class="col-md-4  col-sm-6" id="logo_right"><!-- search area starts here -->
-				  	
-				  	
-				  	<!-- <div class="search_block"> -->
-					  	<%= form_tag("/articles", method: "get") do %>
-							 	<%= text_field_tag(:q, nil, class: "form-control search_area",placeholder: "Search") %>
-							  <%= button_tag(type: 'submit', class: "btn btn-primary search-btn") do %>
-  							  <span class="glyphicon glyphicon-search"></span> 
-  							<% end %>
-							<% end %>
-					<!-- 	</div> -->
-				  </div>
-				</div>
-			</div>
-				
+  		<div  id="logo-area">
+  			<%=image_tag("news.png", class: "img-responsive logo-left")%>
+  			<!-- search form -->
+  			<%= form_tag("/articles", method: "get",class: "input-group search-bar") do %>
+				 	<%= text_field_tag(:q, nil, class: "form-control",placeholder: "Search") %>
+				  <span class="input-group-btn">
+				  	<%= button_tag(type: 'submit', class: "btn search-btn") do %><span class="glyphicon glyphicon-search"></span> 
+						<% end %>
+					</span> 
+				<% end %>
+  		</div>
+  		
 
 			<!-- ========================
   		nav bar

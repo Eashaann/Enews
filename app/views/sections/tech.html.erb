@@ -1,6 +1,6 @@
 <div class=" row main_area">
   <%@tech.each do|tech|%> 
-  	<h1><%=tech.name%></h1> <br>
+  	<h2><%=tech.name%></h2> 
     <%=image_tag(tech.image_url,class:"img-responsive")%>
     <p class="description_detail"><%=tech.description.html_safe%></p> <br>
     <%= "#{time_ago_in_words(tech.created_at)} ago" %><hr>

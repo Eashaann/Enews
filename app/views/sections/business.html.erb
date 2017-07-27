@@ -1,10 +1,11 @@
 <div class=" row main_area">
   <%@business.each do|business|%> 
-  	<h1><%=business.name%></h1> <br>
+  	<h2><%=business.name%></h2>
     <%=image_tag(business.image_url,class:"img-responsive")%>
     <p class="description_detail"><%=business.description.html_safe%></p> <br>
     
     <%= "#{time_ago_in_words(business.created_at)} ago" %><hr>
+
   <%end%>
 </div>
   
