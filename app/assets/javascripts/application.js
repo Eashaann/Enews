@@ -17,12 +17,13 @@
 
 
 
-	window.setTimeout(function(){
-		$(".fadeout").fadeTo(500, 0).slideUp(500, function()
-	{
-		$(this).remove();
-	});
-	}, 2000);
+window.setTimeout(function(){
+	$(".fadeout").fadeTo(500, 0).slideUp(500, function()
+{
+	$(this).remove();
+});
+}, 2000);
+
 
 $(document).on('turbolinks:load', function() {
 // navbar fixed
