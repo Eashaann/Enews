@@ -64,14 +64,22 @@
 			          </ul>
 			        </li>
 			      </ul>
-			 
+			 		
+			 			<!-- sign in button -->
 			      <ul class="nav navbar-nav navbar-right">
 			        <li class="<%= active_class(new_user_registration_path) %>">
-				      	<%= link_to new_user_registration_path do %>
-								  <i class="glyphicon glyphicon-user"></i> Sign Up
+			        	<% if user_signed_in? %>
+			      			<% link_to new_user_registration_path do %>
+								  	<i class="glyphicon glyphicon-user"></i> Sign Up
+									<% end %>
+							  <% else %>
+									<%= link_to new_user_registration_path do %>
+								  	<i class="glyphicon glyphicon-user"></i> Sign Up
+									<% end %>
 								<% end %>
 				      </li>
 
+				      <!-- login button -->
 							<li class="<%= active_class(new_user_session_path) %>">
 							  <% if user_signed_in? %>
 							   	<%= link_to destroy_user_session_path, method: :delete do %>
