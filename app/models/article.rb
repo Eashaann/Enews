@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
 	has_many :comments
+	belongs_to :user
 
 	def self.get_featured_article
 		Article.where(featured_articles: true).order(created_at: :desc)		
