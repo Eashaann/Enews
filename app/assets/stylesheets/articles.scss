@@ -15,11 +15,19 @@
 //************************
 //index page styles
 //***********************
+.index_box{
+	height: 480px;
+	padding-bottom: 30px; 
+}
 .description{
 	text-align: justify;
 	height: 4.5em;
 	padding: 5px;
 	overflow: hidden; 
+}
+#heading{
+	height: 18.5%;
+	overflow: hidden;
 }
 #heading a{
 	color: #333;
@@ -27,6 +35,9 @@
 #heading a:hover{
 	color: #000;
 	font-weight: 400;
+}
+.index_box img {
+	height: 40%; 
 }
 
 //************************
@@ -138,5 +149,17 @@
 	border-bottom-right-radius: 5px;
 	cursor: grab;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -196,5 +196,10 @@ Media queries
 	.forgrt-passwrd-btn{
 		font-size: 60%;
 	}
+
+/*articles index*/
+	#heading{
+		height: 16%;
+	}
 }
 
